@@ -22,7 +22,7 @@
       <h3>
 <a id="meld-for-osx" class="anchor" href="#meld-for-osx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Meld for OSX</h3>
 
-<p>This is a fork of Meld packaged and bundled for OSX. The original website for Meld <a href="http://meldmerge.org/">is here (http://meldmerge.org).</a>. Minor work has been done to also integrate OSX menu and shortcuts, but the app is truly the original, excellent Meld.</p>
+<p>This is a fork of Meld packaged and bundled for OSX. The original website for Meld is here <a href="http://meldmerge.org/">http://meldmerge.org</a>. Minor work has been done to also integrate OSX menu and shortcuts, but the app is truly the original, excellent Meld.</p>
 
 <h3>
 <a id="download-osx-dmg-file" class="anchor" href="#download-osx-dmg-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download OSX dmg file</h3>
@@ -35,12 +35,26 @@
 <li><a href="https://github.com/yousseb/meld/releases/download/osx-v1/meldmerge.dmg">Version 1.8 - stable</a></li>
 </ul>
 
+<blockquote>
+<p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20" align="absmiddle"><strong>Tip:</strong> A lot of people are asking how to use this package as a git difftool.
+Once installed, edit you <code>~/.gitconfig</code> and add the following lines</p>
+
+<pre><code>    [diff]
+        tool = meld
+    [difftool]
+        prompt = false
+    [difftool "meld"]
+        trustExitCode = true
+        cmd = /Applications/Meld.app/Contents/MacOS/Meld \"$LOCAL\" \"$PWD/$REMOTE\"
+</code></pre>
+</blockquote>
+
 <h3>
 <a id="screenshot" class="anchor" href="#screenshot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot</h3>
 
 <p><img src="https://cloud.githubusercontent.com/assets/4719498/5577517/7b87d086-901b-11e4-8f73-08696600769d.png" alt="screen shot 2014-12-30 at 11 59 11 am"></p>
 
-<p>The following is copied from the original Meld page <a href="http://meldmerge.org/">http://meldmerge.org/</a>. Please visit the original project website for more info. For the full help manual, please visit <a href="http://meldmerge.org/help/">http://meldmerge.org/help/</a>.</p>
+<p><strong>The following is copied from the original Meld page <a href="http://meldmerge.org/">http://meldmerge.org/</a>. Please visit the original project website for more info. For the full help manual, please visit <a href="http://meldmerge.org/help/">http://meldmerge.org/help/</a>.</strong></p>
 
 <h3>
 <a id="what-is-meld" class="anchor" href="#what-is-meld" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Meld?</h3>
