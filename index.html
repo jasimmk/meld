@@ -73,18 +73,20 @@ Once installed, edit your <code>~/.gitconfig</code> and add the following lines<
 <p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20" align="absmiddle"><strong>Tip:</strong>
 Meld OSX also understands checks for the following environment variables.
 
-<code>G_ENABLE_DIAGNOSTIC 0 or 1
+<pre><code>
+G_ENABLE_DIAGNOSTIC 0 or 1
 GTK_THEME Adwaita or Adwaita:dark
-</code>
-
-This can be done by exporting variable in the wrapper script
-<code>
+</code></pre>
+<p>
+  The theme change can be done by changing the variable in the wrapper script
+</p>
+<pre><code>
 sudo nano /Applications/Meld.app/Contents/MacOS/Meld
-</code>
-
+</code></pre>
+<p>
 find the part that says
-  
-<code>
+</p> 
+<pre><code>
 environment = dict(os.environ, **{
     "DYLD_LIBRARY_PATH": ":".join([
         os.path.join(APPPATH, "Resources", "lib"),
@@ -94,11 +96,11 @@ environment = dict(os.environ, **{
     "LC_ALL": LANG,
     "LC_CTYPE": LANG
 })
-</code>
-  
-And change it to
-  
-<code>
+</code></pre>
+<p>  
+and change it to
+</p>
+<pre><code>
 environment = dict(os.environ, **{
     "DYLD_LIBRARY_PATH": ":".join([
         os.path.join(APPPATH, "Resources", "lib"),
@@ -109,8 +111,10 @@ environment = dict(os.environ, **{
     "LC_CTYPE": LANG,
     "GTK_THEME":"Adwaita:dark"
 })
-</code>
+</code></pre>
+<p>
 and you'll have a fully dark meld..
+</p>
 <blockquote>
 
 <h3>
