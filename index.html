@@ -73,21 +73,18 @@ Once installed, edit your <code>~/.gitconfig</code> and add the following lines<
 <p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20" align="absmiddle"><strong>Tip:</strong>
 Meld OSX also understands/checks for the following environment variables.
 
-<pre><code>
-G_ENABLE_DIAGNOSTIC 0 or 1
+<pre><code>G_ENABLE_DIAGNOSTIC 0 or 1
 GTK_THEME Adwaita or Adwaita:dark
 </code></pre>
 <p>
   The theme change can be done by changing the variable in the wrapper script
 </p>
-<pre><code>
-sudo nano /Applications/Meld.app/Contents/MacOS/Meld
+<pre><code>sudo nano /Applications/Meld.app/Contents/MacOS/Meld
 </code></pre>
 <p>
 find the part that says
 </p> 
-<pre><code>
-environment = dict(os.environ, **{
+<pre><code>environment = dict(os.environ, **{
     "DYLD_LIBRARY_PATH": ":".join([
         os.path.join(APPPATH, "Resources", "lib"),
         os.path.join(APPPATH, "Frameworks")
@@ -100,8 +97,7 @@ environment = dict(os.environ, **{
 <p>  
 and change it to
 </p>
-<pre><code>
-environment = dict(os.environ, **{
+<pre><code>environment = dict(os.environ, **{
     "DYLD_LIBRARY_PATH": ":".join([
         os.path.join(APPPATH, "Resources", "lib"),
         os.path.join(APPPATH, "Frameworks")
