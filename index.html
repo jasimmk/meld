@@ -68,6 +68,51 @@ Once installed, edit your <code>~/.gitconfig</code> and add the following lines<
 </code></pre>
 </blockquote>
 
+
+<blockquote>
+<p><img class="emoji" title=":bulb:" alt=":bulb:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4a1.png" height="20" width="20" align="absmiddle"><strong>Tip:</strong>
+Meld OSX also understands checks for the following environment variables.
+
+<code>G_ENABLE_DIAGNOSTIC 0 or 1
+GTK_THEME Adwaita or Adwaita:dark
+</code>
+
+This can be done by exporting variable in the wrapper script
+<code>
+sudo nano /Applications/Meld.app/Contents/MacOS/Meld
+</code>
+
+find the part that says
+  
+<code>
+environment = dict(os.environ, **{
+    "DYLD_LIBRARY_PATH": ":".join([
+        os.path.join(APPPATH, "Resources", "lib"),
+        os.path.join(APPPATH, "Frameworks")
+    ]),
+    "LANG": LANG,
+    "LC_ALL": LANG,
+    "LC_CTYPE": LANG
+})
+</code>
+  
+And change it to
+  
+<code>
+environment = dict(os.environ, **{
+    "DYLD_LIBRARY_PATH": ":".join([
+        os.path.join(APPPATH, "Resources", "lib"),
+        os.path.join(APPPATH, "Frameworks")
+    ]),
+    "LANG": LANG,
+    "LC_ALL": LANG,
+    "LC_CTYPE": LANG,
+    "GTK_THEME":"Adwaita:dark"
+})
+</code>
+and you'll have a fully dark meld..
+<blockquote>
+
 <h3>
 <a id="why-meld-for-macosx-and-not-macportshomebrew" class="anchor" href="#why-meld-for-macosx-and-not-macportshomebrew" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why Meld for Mac/OSX and not Macports/Homebrew</h3>
 
